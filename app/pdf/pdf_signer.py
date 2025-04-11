@@ -8,6 +8,7 @@ class PDFSigner:
     """
     Signs a PDF file using a private key. Signature is appended to the end of the file.
     """
+
     def __init__(self, private_key: rsa.RSAPrivateKey) -> None:
         self._private_key = private_key
 
