@@ -11,6 +11,7 @@ class PDFVerifier:
     """
     Verifies the signature of a PDF file using a public key.
     """
+
     def __init__(self, public_key: rsa.RSAPublicKey):
         self._public_key = public_key
 

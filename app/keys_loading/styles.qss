@@ -1,0 +1,38 @@
+QDialog {
+    background-color: #f0f0f0;
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+}
+
+QDialog QLabel {
+    font-size: 15x;
+    color: black;
+    margin: 5px 0px;
+    font-weight: 500;
+    qproperty-alignment: AlignCenter;
+}
+
+QDialog QLineEdit {
+    background-color: #f0f0f0;
+    border: 1px solid #000000;
+    color: black;
+    border-radius: 5px;
+    padding: 7px 0px;
+    margin: 5px 0px;
+}
+
+QDialog QPushButton {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #000000;
+    font-weight: bold;
+    padding: 6px 20px;
+    margin: 5px auto;
+    border-radius: 5px;
+    qproperty-icon: none;
+    text-decoration: none;
+}
+
+QDialog QPushButton:hover {
+    background-color: #8c8c8c;
+}
