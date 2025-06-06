@@ -15,6 +15,7 @@ class PasswordDialog(QDialog):
     A class for managing the password dialog.
     It displays a message and a password input field.
     """
+
     def __init__(self):
         super().__init__()
 

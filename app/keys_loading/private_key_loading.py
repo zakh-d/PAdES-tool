@@ -5,7 +5,9 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from .singleton_meta import SingletonMeta
 import logging
+
 logger = logging.getLogger(__name__)
+
 
 class PrivateKey(metaclass=SingletonMeta):
     """
@@ -16,7 +18,7 @@ class PrivateKey(metaclass=SingletonMeta):
     def __init__(self):
         self.__private_key = None
 
-    def load_private_key(self, private_key_path: str, pin: str) -> None:
+    def load_private_key(self, private_key_path: str, pin: str) -> bool:
         """
         Loads the private key from the specified path and decrypts it with the specified PIN.
         Uses SHA-256 to hash the PIN before usage.
@@ -31,8 +33,10 @@ class PrivateKey(metaclass=SingletonMeta):
                     f.read(), password=hashed_pin
                 )
                 logger.info("private key was loaded")
+                return True
             except ValueError:
                 logger.error("Invalid password")
+                return False
 
     @property
     def value(self) -> Optional[rsa.RSAPrivateKey]:
